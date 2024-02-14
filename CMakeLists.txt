@@ -17,7 +17,6 @@ target_link_libraries (${PROJECT_NAME} PRIVATE Urho3D)
 if (PROJECT_IS_TOP_LEVEL AND URHO3D_CSHARP)
     set (DEST_BIN_DIR_CONFIG bin)
     set (DEST_LIBRARY_DIR_CONFIG bin)
-    set (SWIG_DIR "${REBELFORK_SDK}/include/Urho3D/ThirdParty/swig/Lib")
     target_include_directories (${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
     include (${REBELFORK_SDK}/share/CMake/Modules/UrhoSWIG.cmake)
     csharp_bind_target(
