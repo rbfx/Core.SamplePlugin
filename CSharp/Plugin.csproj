@@ -1,20 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>Plugin.Core.SamplePlugin.Net</AssemblyName>
     <OutputType>Library</OutputType>
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <BindingsSourceCode Include="$(CMAKE_BINARY_DIR)Plugin.Core.SamplePluginCSharp/*.cs" />
+    <BindingsSourceCode Include="$(Plugin_Core_SamplePlugin_BINARY_DIR)/Plugin.Core.SamplePluginCSharp/*.cs" />
   </ItemGroup>
   <Target Name="GatherBuildFiles" BeforeTargets="BeforeCompile">
-    <CreateItem Include="$([System.IO.Directory]::GetFiles(&quot;$(CMAKE_BINARY_DIR)Plugin.Core.SamplePluginCSharp&quot;, &quot;*.cs&quot;))">
+    <CreateItem Include="$([System.IO.Directory]::GetFiles(&quot;$(Plugin_Core_SamplePlugin_BINARY_DIR)/Plugin.Core.SamplePluginCSharp&quot;, &quot;*.cs&quot;))">
       <Output TaskParameter="Include" ItemName="Compile" />
     </CreateItem>
   </Target>
   <ItemGroup>
     <Reference Include="Urho3DNet">
-      <HintPath>$(URHO3D_SDK_PATH)/bin/Debug/Urho3DNet.dll</HintPath>
+      <HintPath>$(URHO3D_SDK_PATH)/bin/$(Configuration)/Urho3DNet.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

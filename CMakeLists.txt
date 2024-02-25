@@ -11,10 +11,10 @@ endif ()
 
 file (GLOB SOURCE_FILES *.h *.cpp)
 add_library(${PROJECT_NAME} ${SOURCE_FILES})
-define_static_plugin (${PROJECT_NAME} "${PROJECT_NAME}")
+setup_plugin_target (${PROJECT_NAME} "${PROJECT_NAME}")
 target_link_libraries (${PROJECT_NAME} PRIVATE Urho3D)
 
-if (PROJECT_IS_TOP_LEVEL AND URHO3D_CSHARP)
+if (URHO3D_CSHARP)
     set (DEST_BIN_DIR_CONFIG bin)
     set (DEST_LIBRARY_DIR_CONFIG bin)
     target_include_directories (${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
