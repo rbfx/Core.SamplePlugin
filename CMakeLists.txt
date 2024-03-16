@@ -25,3 +25,6 @@ if (URHO3D_CSHARP)
         NAMESPACE Urho3DNet
     )
 endif ()
+
+# Generate Visual Studio props file for csproj.
+rbfx_configure_cmake_props()
