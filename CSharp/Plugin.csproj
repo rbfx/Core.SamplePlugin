@@ -12,12 +12,12 @@
       <Output TaskParameter="Include" ItemName="Compile" />
     </CreateItem>
   </Target>
-  <ItemGroup Condition=" '$(URHO3D_IS_SDK)' == 'ON' ">
+  <ItemGroup Condition=" '$(Urho3D_IS_SDK)' == 'ON' ">
     <Reference Include="Urho3DNet">
-      <HintPath>$(URHO3D_SDK_PATH)/bin/$(Configuration)/Urho3DNet.dll</HintPath>
+      <HintPath>$(Urho3D_PACKAGE_ROOT)/bin/$(Configuration)/Urho3DNet.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup Condition=" '$(URHO3D_IS_SDK)' != 'ON' ">
+  <ItemGroup Condition=" '$(Urho3D_IS_SDK)' != 'ON' ">
     <ProjectReference Include="$(Urho3D_SOURCE_DIR)/CSharp/Urho3DNet.csproj" />
   </ItemGroup>
 </Project>
