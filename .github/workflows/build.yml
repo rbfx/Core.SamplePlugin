@@ -7,6 +7,8 @@ on:
       - 'skip-ci-**'
   # Build on pull requests, except drafts.
   pull_request:
+  # Build manually
+  workflow_dispatch:
   # Build on a schedule to keep up with the engine changes.
   schedule:
     - cron: '0 0 * * 0'
@@ -26,7 +28,7 @@ env:
 
 jobs:
   CheckSkipCI:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: |
       !contains(github.event.head_commit.message, '[skip ci]') &&
       !contains(github.event.pull_request.title, '[skip ci]') &&
