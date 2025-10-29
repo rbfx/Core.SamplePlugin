@@ -33,7 +33,6 @@ function action-generate() {
         "$ci_build_dir"
         "-S"
         "$ci_source_dir"
-        "-DREBELFORK_SDK=$ci_target_sdk_dir"
     )
 
     if [[ "$ci_platform" == "windows" ]]; then
@@ -43,6 +42,11 @@ function action-generate() {
             "-A"
             "x64"
             "-DCMAKE_BUILD_TYPE=${build_config[$ci_platform]}"
+            "-DCMAKE_PREFIX_PATH=$ci_target_sdk_dir/share"
+        )
+    else
+        params+=(
+            "-DCMAKE_PREFIX_PATH=$ci_target_sdk_dir"
         )
     fi
 

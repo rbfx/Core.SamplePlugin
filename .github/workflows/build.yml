@@ -47,7 +47,7 @@ jobs:
 
     env:
       ci_platform: windows
-      ci_target_sdk_name: rebelfork-sdk-Windows-msvc-rel-dll-x64-latest.zip
+      ci_target_sdk_name: rebelfork-sdk-Windows-msvc-dll-x64-latest.zip
       ci_upload_release: ${{
                            (github.repository == 'rbfx/Core.SamplePlugin')  &&
                            (github.ref == 'refs/heads/master')
