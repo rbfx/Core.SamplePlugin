@@ -3,7 +3,7 @@
 #include "SampleComponent.h"
 
 using namespace Urho3D;
-#include <Urho3D/CSharp/Native/SWIGHelpers.h>
+#include <Urho3DNet/Native/SWIGHelpers.h>
 %}
 #define PLUGIN_CORE_SAMPLEPLUGIN_API
 %import "Urho3D.i"

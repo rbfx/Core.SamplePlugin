@@ -42,6 +42,7 @@ function action-generate() {
             "-A"
             "x64"
             "-DCMAKE_BUILD_TYPE=${build_config[$ci_platform]}"
+            "-DBUILD_SHARED_LIBS=ON"
             "-DCMAKE_PREFIX_PATH=$ci_target_sdk_dir/share"
         )
     else
